@@ -1,27 +1,16 @@
-define([
-  'jquery',
-  'nbd/View/Entity',
-  'nbd/util/extend',
-  'hgn!templates/dialog',
-  'hgn!templates/button'
-], function($, View, extend, dialog, button) {
+define(['./Entity'], function(View) {
   'use strict';
 
   var constructor = View.extend({
-    mustache: {},
-
-    template: function(data) {
-      return $(dialog(data, extend({
-        content: this.mustache.template,
-        button: button.template
-      }, this.partials)));
+    init: function(model) {
+      this._super(model);
+      this.on('postrender', this._bindButtons);
     },
 
-    rendered: function() {
-      this.$view
-      .on('click', '.js-close, .close, .form-button-close, .form-button-cancel',
-          this.hide.bind(this))
-      .on('click', '.form-button-disabled', false);
+    _bindButtons: function($view) {
+      $view
+      .on('click', '.js-close', this.hide.bind(this))
+      .on('click', '.js-disabled', false);
     },
 
     position: function() {},
@@ -36,7 +25,7 @@ define([
 
     toggle: function() {
       var state = this.$view.is(':visible');
-      return this[ state ? 'hide': 'show' ]();
+      return this[state ? 'hide': 'show']();
     }
   });
 
