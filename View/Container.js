@@ -2,9 +2,9 @@ define([
   'jquery',
   'nbd/util/construct',
   'nbd/View/Element',
-  '../Controller/Entity',
+  '../Controller',
   '../trait/eventMappable'
-], function($, construct, Element, Entity, eventMappable) {
+], function($, construct, Element, Controller, eventMappable) {
   'use strict';
 
   return Element.extend({
@@ -26,7 +26,7 @@ define([
     unbind: function() {
       this._undelegateEvents();
     },
-    decorate: construct.bind(Entity),
+    decorate: construct.bind(Controller),
 
     render: function(resultset) {
       var nodes = resultset.map(this.decorate, this).filter(Boolean);

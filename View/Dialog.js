@@ -1,4 +1,4 @@
-define(['./Entity'], function(View) {
+define(['../View'], function(View) {
   'use strict';
 
   var constructor = View.extend({

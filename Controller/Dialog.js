@@ -1,6 +1,6 @@
 define([
   'jquery',
-  'be/Controller/Dialog',
+  'nbd/Controller/Responsive',
   'nbd/util/async'
 ], function($, Controller, async) {
   'use strict';
@@ -10,11 +10,11 @@ define([
 
     setContext: function($context) {
       if (this.$context) {
-        this.$context.off('click');
+        this.$context.off('click.dialog');
       }
 
       this.$context = $context
-      .on('click', function(e) {
+      .on('click.dialog', function(e) {
         if (e.isDefaultPrevented() ||
             e.originalEvent.data === this._view) { return; }
         this.toggle(e.delegateTarget);
