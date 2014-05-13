@@ -1,4 +1,7 @@
-define(['../View'], function(View) {
+define([
+  '../View',
+  '../../ux/keyboard'
+], function(View, keyboard) {
   'use strict';
 
   var constructor = View.extend({
@@ -16,10 +19,14 @@ define(['../View'], function(View) {
     position: function() {},
 
     show: function() {
+      keyboard.on({
+        escape: this.hide.bind(this)
+      });
       return this.trigger('show', this.$view);
     },
 
     hide: function() {
+      keyboard.off();
       return this.trigger('hide', this.$view);
     },
 

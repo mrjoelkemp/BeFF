@@ -1,8 +1,8 @@
 define([
+  'jquery',
   'nbd/util/extend',
-  'be/View/Dialog',
-  'lib/keyboard'
-], function(extend, View, keyboard) {
+  '../Dialog'
+], function($, extend, View) {
   'use strict';
 
   var constructor = View.extend({
@@ -14,6 +14,14 @@ define([
       }, data));
     },
 
+    destroy: function() {
+      this._super.apply(this, arguments);
+      if (this.$block) {
+        this.$block.remove();
+        this.$block = null;
+      }
+    },
+
     render: function() {
       constructor.Z_INDEX += 2;
       this._zIndex = constructor.Z_INDEX;
@@ -21,37 +29,35 @@ define([
     },
 
     rendered: function() {
+      this.$block = this.$block || $('<div>', {
+        class: "blocking-div"
+      })
+      .after(this.$view);
       this._super();
-      this.$view.filter('.blocking-div')
-      .on('click', this.hide.bind(this));
     },
 
     position: function() {
       if (!this.$view) { return; }
 
-      var $dialog = this.$view.filter('.popup');
-
       var windowHeight = window.innerHeight ||
         // IE compatibility
         document.documentElement.offsetHeight,
-      offsetTop = (windowHeight - $dialog.outerHeight()) / 2;
+      offsetTop = (windowHeight - this.$view.outerHeight()) / 2;
 
       // Manually center
-      $dialog.css({
+      this.$view.css({
         "z-index": this._zIndex,
-        "margin-left": -~~($dialog.width() / 2) + 'px',
+        "margin-left": -~~(this.$view.width() / 2) + 'px',
         top: Math.max(0, offsetTop)
       })
       // Then show in position
       .addClass('shown');
 
-      this.$view.filter('.blocking-div')
-      .css("z-index", this._zIndex - 1);
+      this.$block.css("z-index", this._zIndex - 1);
     },
 
     show: function() {
       if (!this.$view) { return; }
-      keyboard.on({escape: this.hide.bind(this)});
       if (!this.$view.parent().is(document.body)) {
         this.$view.appendTo(document.body);
       }
@@ -60,7 +66,6 @@ define([
 
     hide: function() {
       if (!this.$view) { return; }
-      keyboard.off();
       this.$view.detach();
       return this._super();
     },
