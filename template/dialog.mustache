@@ -1,0 +1,37 @@
+<div class="popup {{dialogType}}{{#classes}} {{.}}{{/classes}}{{^buttons}} no-buttons{{/buttons}}{{^title}} no-title{{/title}}{{#fullBleed}} full-bleed{{/fullBleed}}">
+  <div class="popup-inner-wrap">
+
+    {{#toolbar}}
+    <div class="{{#layover}}toolbar{{/layover}}{{^layover}}popup-header{{/layover}}">
+      <div class="header">{{{title}}}</div>
+      {{^hideClose}}
+      <a class="header-action close right js-close{{^layover}} popup-close{{/layover}}">
+        <span class="nav-icon-close nav-icon"></span>
+      </a>
+      {{/hideClose}}
+      {{#layover}}
+      {{#button}}{{> button}}{{/button}}
+      {{/layover}}
+    </div>
+    {{/toolbar}}
+
+    <div class="popup-content{{#toolbar}} has-toolbar{{/toolbar}}">
+      {{> content}}
+      {{^layover}}
+    </div>
+    {{/layover}}
+
+    <div class="popup-buttons{{^buttons}} hide{{/buttons}}">
+      {{#buttons}}{{> button}}{{/buttons}}
+    </div>
+
+    {{#layover}}
+  </div>
+  {{/layover}}
+
+  </div>{{! popup-inner-wrap}}
+</div>
+
+{{#blocking}}
+<div class="blocking-div"></div>
+{{/blocking}}
