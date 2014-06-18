@@ -1,93 +1,146 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Global</title>
-    
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<meta charset="utf-8">
+	<title>BeFF Global</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	
+	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
+	
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">BeFF</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
 
-<div id="main">
-    
-    <h1 class="page-title">Global</h1>
-    
-    
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-Container.html">Container</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#_catch">_catch</a>
+						</li>
+						
+						<li>
+							<a href="global.html#commit">commit</a>
+						</li>
+						
+						<li>
+							<a href="global.html#toggleElement">toggleElement</a>
+						</li>
+						
+						<li>
+							<a href="global.html#validator">validator</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
 
 
-
+	<h1 class="page-title">Global</h1>
 <section>
-    
+
 <header>
     <h2>
     
     </h2>
     
-</header>  
+</header>
 
 <article>
     <div class="container-overview">
     
-    
+
     
         
-        
+
         
 <dl class="details">
     
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 </dl>
 
-        
+
         
     
     </div>
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
-    
-    
+
     
         <h3 class="subsection-title">Methods</h3>
-        
+
         <dl>
             
 <dt>
@@ -99,7 +152,7 @@
     
     
     <div class="description">
-        Default error catch
+        <p>Default error catch</p>
     </div>
     
 
@@ -112,34 +165,34 @@
     
 <dl class="details">
     
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#line121">line 121</a>
+        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#sunlight-1-line-121">line 121</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
@@ -168,11 +221,10 @@
     
     
     <div class="description">
-        Inner Submission process. Should be limited to the forms specific behaviors that are
+        <p>Inner Submission process. Should be limited to the forms specific behaviors that are
 dependent on pre- and post- submission of the form. For the majority of simple forms,
-this should be all that needs to be overridden.
-
-Default implementation simply submits the form data to the form's defined endpoint.
+this should be all that needs to be overridden.</p>
+<p>Default implementation simply submits the form data to the form's defined endpoint.</p>
     </div>
     
 
@@ -185,34 +237,34 @@ Default implementation simply submits the form data to the form's defined endpoi
     
 <dl class="details">
     
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#line114">line 114</a>
+        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#sunlight-1-line-114">line 114</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
@@ -241,9 +293,9 @@ Default implementation simply submits the form data to the form's defined endpoi
     
     
     <div class="description">
-        Creates checkboxes out of arbitrary elements
+        <p>Creates checkboxes out of arbitrary elements
 Toggles the active class on the element,
-backs it up using a hidden checkbox
+backs it up using a hidden checkbox</p>
     </div>
     
 
@@ -256,34 +308,34 @@ backs it up using a hidden checkbox
     
 <dl class="details">
     
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="toggle.js.html">dom/toggle.js</a>, <a href="toggle.js.html#line22">line 22</a>
+        <a href="toggle.js.html">dom/toggle.js</a>, <a href="toggle.js.html#sunlight-1-line-22">line 22</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
@@ -312,7 +364,7 @@ backs it up using a hidden checkbox
     
     
     <div class="description">
-        Default validator does nothing
+        <p>Default validator does nothing</p>
     </div>
     
 
@@ -325,34 +377,34 @@ backs it up using a hidden checkbox
     
 <dl class="details">
     
-        
-    
-    
+
     
 
     
+
     
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
+
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#line105">line 105</a>
+        <a href="Form.js.html">Component/Form.js</a>, <a href="Form.js.html#sunlight-1-line-105">line 105</a>
     </li></ul></dd>
     
+
     
+
     
-    
-    
-    
+
     
 </dl>
 
@@ -372,30 +424,72 @@ backs it up using a hidden checkbox
 
         </dl>
     
+
     
-    
-    
+
     
 </article>
 
-</section>  
+</section>
 
 
 
 
-</div>
+				</div>
 
-<nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-Container.html">Container</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_catch">_catch</a></li><li><a href="global.html#commit">commit</a></li><li><a href="global.html#toggleElement">toggleElement</a></li><li><a href="global.html#validator">validator</a></li></ul>
-</nav>
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Behance
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on Wed Jun 18 2014 17:09:02 GMT-0400 (EDT) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
 
-<br clear="both">
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
 
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Jun 18 2014 16:40:34 GMT-0400 (EDT)
-</footer>
+	</div>
+	<script src="scripts/sunlight.js"></script>
+	<script src="scripts/sunlight.javascript.js"></script>
+	<script src="scripts/sunlight-plugin.doclinks.js"></script>
+	<script src="scripts/sunlight-plugin.linenumbers.js"></script>
+	<script src="scripts/sunlight-plugin.menu.js"></script>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.scrollTo.js"></script>
+	<script src="scripts/jquery.localScroll.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+
+	<script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
+
+	<script>
+		$( function () {
+			$( "#toc" ).toc( {
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : 60
+			} );
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+
+		} );
+	</script>
+
+	
+
 </body>
 </html>
